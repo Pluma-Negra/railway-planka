@@ -6,5 +6,4 @@ COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
 # ENTRYPOINT:
-EXPOSE 80
-CMD ["/bin/sh", "/start.sh"]
+ENTRYPOINT ["/start.sh"]
