@@ -12,8 +12,11 @@ echo "[planka-start] TRUST_PROXY=${TRUST_PROXY:-<unset>}"
 # Railway asigna PORT dinámicamente; Planka lo necesita como PORT
 export PORT="${PORT:-1337}"
 
-echo "[planka-start] Running database migrations..."
-cd /app
-node db/scripts/migrate.js
+# Temporal: explorar estructura de la imagen
+echo "[planka-start] === Explorando estructura ==="
+ls /
+ls /app 2>/dev/null || echo "/app no existe"
+find / -name "migrate*" 2>/dev/null | head -20
+echo "[planka-start] === Fin exploración ==="
 
 exec /usr/local/bin/docker-entrypoint.sh "$@"
