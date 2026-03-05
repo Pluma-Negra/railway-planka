@@ -5,5 +5,5 @@ USER root
 COPY start.sh /start.sh
 RUN chmod +x /start.sh
 
-# ENTRYPOINT:
 ENTRYPOINT ["/start.sh"]
+CMD ["node", "--max-old-space-size=128", "app.js"]
