@@ -1,4 +1,4 @@
-FROM ghcr.io/plankanban/planka:2.0.0-rc.4
+FROM ghcr.io/plankanban/planka:2.0.3
 
 USER root
 
